@@ -36,8 +36,8 @@ const appRouter = router({
     .input((v) => {
       if (typeof v !== 'object') {
         throw new Error(`Object expected received ${typeof v}`);
-        return v;
       }
+      return v;
     })
     .mutation(async (opts) => {
       // mutation updates the data
