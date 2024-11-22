@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Long Polling</title>
+  </head>
+  <body>
+    <h1>Long Polling</h1>
+  </body>
+  <script>
+    const makeRequest = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/messages');
+        const data = await response.json();
+        console.log('data', data);
+        makeRequest();
+      } catch (err) {
+        console.error('err', err);
+        makeRequest();
+      }
+    };
+    makeRequest();
+    // Each API request remains in pending state , until we don't receive response from api.
+  </script>
+</html>
