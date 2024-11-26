@@ -21,6 +21,9 @@
       }
     };
     makeRequest();
-    // Each API request remains in pending state , until we don't receive response from api.
+    /* Each API request remains in pending state , until we don't receive response from api.
+    We aren't making unncessary API calls which reduces cost on server but we are maintaining 1 TCP connection
+    with server always open. We are keeping the server alive , so this will consume some bandwidth on server. 
+    */
   </script>
 </html>
