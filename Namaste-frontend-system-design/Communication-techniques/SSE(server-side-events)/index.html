@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSE Example</title>
+  </head>
+  <body>
+    <h1>Server Side Events Example</h1>
+    <div id="sse-data"></div>
+    <script>
+      // Setup SSE connection
+      const eventSource = new EventSource('/sse');
+
+      eventSource.onmessage = (event) => {
+        console.log('event.data', event.data);
+
+        const sseData = document.getElementById('sse-data');
+        sseData.innerHTML += `<p>${event.data}</p>`;
+      };
+    </script>
+  </body>
+</html>
