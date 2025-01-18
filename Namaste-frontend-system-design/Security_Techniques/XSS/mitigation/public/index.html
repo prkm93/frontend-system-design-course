@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mitigation</title>
+    <!-- Now we don't want any unsecure script to be executed, for this we add a middleware with CSP -->
+    <script src="http://unsecure.com/abc.js"></script>
+    <script>
+      console.log('My trusted code');
+    </script>
+    <script nonce="randomKey">
+      console.log('Non trusted code');
+    </script>
+  </head>
+  <body>
+    <h1>Page for CORS demo!</h1>
+    <img
+      src="https://media.licdn.com/dms/image/v2/C5603AQFrU5lT15SNUg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517279355384?e=1742428800&v=beta&t=D-K9R1PIowIIC3Mp2G51cwoe8lMQb77NBLOabSyt7aY" />
+    <img
+      src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" />
+  </body>
+</html>
